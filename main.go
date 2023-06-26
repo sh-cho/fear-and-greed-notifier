@@ -82,8 +82,8 @@ func sendMesage(fr FgiResult) {
 
 	ch, err := strconv.ParseInt(os.Getenv("CHATID"), 10, 64)
 	m := tgbotapi.NewMessage(ch, fr.toString())
-	_, err2 := bot.Send(m)
-	if err2 != nil {
-		panic(err2)
+	_, err = bot.Send(m)
+	if err != nil {
+		panic(err)
 	}
 }
