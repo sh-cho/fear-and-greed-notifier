@@ -1,7 +1,9 @@
 # fear-and-greed-notifier
 
+[![test](https://github.com/sh-cho/fear-and-greed-notifier/actions/workflows/test.yml/badge.svg?branch=main&event=push)](https://github.com/sh-cho/fear-and-greed-notifier/actions/workflows/test.yml)
+
 ```sh
-go run main.go
+go run .
 ```
 
 envs
