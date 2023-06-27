@@ -42,7 +42,7 @@ func (fr FgiResult) toString() string {
 - 1y ago: %d (%s)`, fr.LastUpdated.HumanDate,
 		fr.Fgi.Now.Value, fr.Fgi.Now.ValueText,
 		fr.Fgi.PreviousClose.Value, fr.Fgi.PreviousClose.ValueText,
-		fr.Fgi.OneWeekAgo.Value, fr.Fgi.PreviousClose.ValueText,
+		fr.Fgi.OneWeekAgo.Value, fr.Fgi.OneWeekAgo.ValueText,
 		fr.Fgi.OneMonthAgo.Value, fr.Fgi.OneMonthAgo.ValueText,
 		fr.Fgi.OneYearAgo.Value, fr.Fgi.OneYearAgo.ValueText)
 }
