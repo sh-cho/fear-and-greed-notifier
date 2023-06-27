@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"io"
 	"net/http"
@@ -13,39 +12,6 @@ import (
 const (
 	FgiApi = "https://fear-and-greed-index.p.rapidapi.com/v1/fgi"
 )
-
-type VVT struct {
-	Value     int
-	ValueText string
-}
-
-type FgiResult struct {
-	LastUpdated struct {
-		EpochUnixSeconds int
-		HumanDate        string
-	}
-	Fgi struct {
-		Now           VVT
-		PreviousClose VVT
-		OneWeekAgo    VVT
-		OneMonthAgo   VVT
-		OneYearAgo    VVT
-	}
-}
-
-func (fr FgiResult) toString() string {
-	return fmt.Sprintf(`[lastUpdate: %s]
-- now: %d (%s)
-- prev: %d (%s)
-- 1w ago: %d (%s)
-- 1m ago: %d (%s)
-- 1y ago: %d (%s)`, fr.LastUpdated.HumanDate,
-		fr.Fgi.Now.Value, fr.Fgi.Now.ValueText,
-		fr.Fgi.PreviousClose.Value, fr.Fgi.PreviousClose.ValueText,
-		fr.Fgi.OneWeekAgo.Value, fr.Fgi.OneWeekAgo.ValueText,
-		fr.Fgi.OneMonthAgo.Value, fr.Fgi.OneMonthAgo.ValueText,
-		fr.Fgi.OneYearAgo.Value, fr.Fgi.OneYearAgo.ValueText)
-}
 
 func main() {
 	res := getFearAndGreedIndex()
