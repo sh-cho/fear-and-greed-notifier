@@ -1,4 +1,4 @@
-name: Check and send message
+name: test
 
 on:
   push:
