@@ -10,7 +10,7 @@ go run .
 
 envs
 - TELEGRAM_APITOKEN
-- RAPIADAPI_KEY
+- RAPIDAPI_KEY
 - CHATID
 
 ## links
