@@ -2,7 +2,7 @@
 
 [![test](https://github.com/sh-cho/fear-and-greed-notifier/actions/workflows/test.yml/badge.svg?branch=main&event=push)](https://github.com/sh-cho/fear-and-greed-notifier/actions/workflows/test.yml)
 
-<img width="312" alt="image" src="https://github.com/sh-cho/fear-and-greed-notifier/assets/11611397/30fda01e-ec23-4e56-ba89-241ef374fff4">
+<img width="311" alt="image" src="https://github.com/sh-cho/fear-and-greed-notifier/assets/11611397/bde233f8-ffc8-4f0b-b90e-6b2ccc01e437">
 
 ```sh
 go run .
