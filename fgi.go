@@ -23,8 +23,21 @@ type Fgi struct {
 	OneYearAgo    VVT
 }
 
+func valueToColor(v int) string {
+	if 0 <= v && v <= 25 {
+		return "🟢"
+	} else if 26 <= v && v <= 50 {
+		return "🟡"
+	} else if 51 <= v && v <= 75 {
+		return "🟠"
+	} else { // it's over 75!
+		return "🔴"
+	}
+}
+
 func (v VVT) toString() string {
-	return fmt.Sprintf("%d (%s)", v.Value, v.ValueText)
+	color := valueToColor(v.Value)
+	return fmt.Sprintf("%s %d (%s)", color, v.Value, v.ValueText)
 }
 
 func (fr FgiResult) toString() string {
