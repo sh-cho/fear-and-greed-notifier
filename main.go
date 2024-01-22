@@ -2,11 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	"io"
 	"net/http"
 	"os"
 	"strconv"
+
+	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
 const (
