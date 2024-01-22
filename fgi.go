@@ -24,11 +24,13 @@ type Fgi struct {
 }
 
 func valueToColor(v int) string {
-	if 0 <= v && v <= 25 {
+	if 0 <= v && v <= 24 {
+		return "🔵"
+	} else if 25 <= v && v <= 39 {
 		return "🟢"
-	} else if 26 <= v && v <= 50 {
+	} else if 40 <= v && v <= 59 {
 		return "🟡"
-	} else if 51 <= v && v <= 75 {
+	} else if 60 <= v && v <= 74 {
 		return "🟠"
 	} else { // it's over 75!
 		return "🔴"
