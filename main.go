@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -17,6 +18,7 @@ const (
 func main() {
 	res := getFearAndGreedIndex()
 	sendMesage(res)
+	fmt.Println(res.toJson())
 }
 
 func getFearAndGreedIndex() FgiResult {

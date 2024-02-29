@@ -6,16 +6,40 @@ on:
 
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v4
       - uses: actions/setup-go@v4
         with:
           go-version-file: 'go.mod'
-      - run: go run .
+
+      - name: Fetch and Send Message
+        run: |
+          go run . > fgi_output.txt
+          cat fgi_output.txt
+          tar -czf fgi_output.tar.gz fgi_output.txt
         env:
           TELEGRAM_APITOKEN: ${{ secrets.TELEGRAM_APITOKEN }}
           CHATID: ${{ secrets.CHATID }}
           RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: fgi_output.tar.gz
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

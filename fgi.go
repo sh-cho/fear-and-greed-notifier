@@ -55,3 +55,12 @@ func (fr FgiResult) toString() string {
 		fr.Fgi.OneMonthAgo.toString(),
 		fr.Fgi.OneYearAgo.toString())
 }
+
+func (fr FgiResult) toJson() string {
+	return fmt.Sprintf(`{"lastUpdate": "%s", "now": "%s", "prev": "%s", "1w ago": "%s", "1m ago": "%s", "1y ago": "%s"}`, fr.LastUpdated.HumanDate,
+		fr.Fgi.Now.toString(),
+		fr.Fgi.PreviousClose.toString(),
+		fr.Fgi.OneWeekAgo.toString(),
+		fr.Fgi.OneMonthAgo.toString(),
+		fr.Fgi.OneYearAgo.toString())
+}
