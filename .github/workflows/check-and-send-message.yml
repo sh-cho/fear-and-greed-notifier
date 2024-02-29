@@ -28,10 +28,10 @@ jobs:
       - name: Fetch and Send Message
         run: |
           mkdir out
-          go run . > out/fgi_output.txt
+          go run . > out/fgi_output.json
           cd out
-          cat fgi_output.txt
-          tar -czf fgi_output.tar.gz fgi_output.txt
+          cat fgi_output.json
+          tar -czf fgi_output.tar.gz fgi_output.json
         env:
           TELEGRAM_APITOKEN: ${{ secrets.TELEGRAM_APITOKEN }}
           CHATID: ${{ secrets.CHATID }}
